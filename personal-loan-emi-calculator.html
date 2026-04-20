@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Loan EMI Calculator India (2026) - Instant Loan Calc</title>
+    <meta name="description" content="Calculate your Personal Loan EMI instantly. Find out total interest paid and plan your short-term unsecured loan repayment schedules.">
+    <meta name="keywords" content="personal loan emi calculator, unsecured loan calculator, instant loan emi, hdfc personal loan calculator">
+    
+    <!-- Canonical Tag for SEO -->
+    <link rel="canonical" href="https://www.your-emi-domain.in/personal-loan-emi-calculator.html" />
+    
+    <!-- Open Graph / Social SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.your-emi-domain.in/personal-loan-emi-calculator.html">
+    <meta property="og:title" content="Personal Loan EMI Calculator India (2026)">
+    <meta property="og:description" content="Plan your unsecured short-term loans accurately with our fast calculator.">
+
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0369a1', secondary: '#059669', darkbg: '#0f172a', darkcard: '#1e293b' } } } }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f1f1f1; } .dark ::-webkit-scrollbar-track { background: #1e293b; } ::-webkit-scrollbar-thumb { background: #0369a1; border-radius: 4px; }
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #059669; cursor: pointer; margin-top: -8px; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #e2e8f0; border-radius: 3px; } .dark input[type=range]::-webkit-slider-runnable-track { background: #334155; }
+        .hide-arrows::-webkit-outer-spin-button, .hide-arrows::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; } .hide-arrows { -moz-appearance: textfield; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-darkbg dark:text-gray-100 transition-colors duration-200 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-darkcard shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="bg-primary p-2 rounded-lg"><i data-lucide="landmark" class="text-white h-6 w-6"></i></div>
+                    <span class="font-bold text-xl tracking-tight">EMI Calc <span class="text-secondary">Pro</span></span>
+                </a>
+                <div class="hidden md:flex space-x-6 font-medium text-sm">
+                    <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition">Main</a>
+                    <a href="home-loan-emi-calculator.html" class="hover:text-primary dark:hover:text-secondary transition">Home Loan</a>
+                    <a href="car-loan-emi-calculator.html" class="hover:text-primary dark:hover:text-secondary transition">Car Loan</a>
+                    <a href="personal-loan-emi-calculator.html" class="text-primary dark:text-secondary border-b-2 border-primary dark:border-secondary pb-1">Personal Loan</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Tool Section -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">Personal Loan EMI Calculator</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Find out total interest paid and plan your unsecured loan repayment schedules.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left: Inputs -->
+            <div class="lg:col-span-7 bg-white dark:bg-darkcard rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 dark:border-gray-800">
+                <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-lg mb-8">
+                    <button id="btn-personal" class="loan-type-btn flex-1 py-2 px-2 text-sm md:text-base rounded-md bg-white dark:bg-darkcard shadow text-primary dark:text-white font-bold transition-all">Personal Loan</button>
+                </div>
+                
+                <!-- Principal -->
+                <div class="mb-8 relative">
+                    <div class="flex justify-between items-end mb-4">
+                        <label class="text-sm font-semibold">Personal Loan Amount (₹)</label>
+                        <div class="relative w-1/3 min-w-[120px]">
+                            <span class="absolute inset-y-0 left-3 flex items-center text-gray-500 font-bold">₹</span>
+                            <input type="number" id="principalInput" class="hide-arrows w-full pl-8 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 rounded-lg font-bold outline-none" oninput="syncInputToSlider('principal')">
+                        </div>
+                    </div>
+                    <input type="range" id="principalSlider" min="50000" max="5000000" step="10000" oninput="syncSliderToInput('principal')">
+                </div>
+
+                <!-- Rate -->
+                <div class="mb-8 relative">
+                    <div class="flex justify-between items-end mb-4">
+                        <label class="text-sm font-semibold">Interest Rate (p.a)</label>
+                        <div class="relative w-1/3 min-w-[120px]">
+                            <input type="number" id="rateInput" class="hide-arrows w-full pl-3 pr-8 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 rounded-lg font-bold outline-none" step="0.1" oninput="syncInputToSlider('rate')">
+                            <span class="absolute inset-y-0 right-4 flex items-center text-gray-500 font-bold">%</span>
+                        </div>
+                    </div>
+                    <input type="range" id="rateSlider" min="8" max="30" step="0.1" oninput="syncSliderToInput('rate')">
+                </div>
+
+                <!-- Tenure -->
+                <div class="mb-4 relative">
+                    <div class="flex justify-between items-end mb-4">
+                        <label class="text-sm font-semibold">Loan Tenure</label>
+                        <div class="flex gap-2 w-1/3 min-w-[140px]">
+                            <input type="number" id="tenureInput" class="hide-arrows w-2/3 pl-3 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 rounded-lg font-bold outline-none" oninput="syncInputToSlider('tenure')">
+                            <select id="tenureType" class="w-1/3 bg-gray-50 dark:bg-gray-900 border border-gray-200 rounded-lg text-sm outline-none p-1" onchange="calculateEMI()">
+                                <option value="years">Yr</option><option value="months">Mo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="range" id="tenureSlider" min="1" max="5" step="1" oninput="syncSliderToInput('tenure')">
+                    <div class="flex justify-between text-xs text-gray-400 mt-2 font-medium"><span id="tenureMinLabel">1 Yr</span><span id="tenureMaxLabel">5 Yrs</span></div>
+                </div>
+            </div>
+
+            <!-- Right: Results -->
+            <div class="lg:col-span-5">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-darkcard dark:to-gray-900 rounded-2xl shadow-xl p-8 text-white h-full flex flex-col relative overflow-hidden">
+                    <div class="text-center mb-6 z-10">
+                        <p class="text-slate-300 font-semibold mb-1 uppercase text-xs">Monthly EMI</p>
+                        <div class="text-4xl font-black text-secondary">₹<span id="resEmi">0</span></div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10 mb-8 space-y-4 z-10">
+                        <div class="flex justify-between text-sm"><span class="text-slate-300">Principal</span><span class="font-bold">₹<span id="resPrincipal">0</span></span></div>
+                        <div class="flex justify-between text-sm border-t border-white/10 pt-3"><span class="text-slate-300">Total Interest</span><span class="font-bold">₹<span id="resInterest">0</span></span></div>
+                    </div>
+                    <div class="relative flex-grow flex items-center justify-center min-h-[200px] z-10"><canvas id="emiChart"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Specific SEO Content for Personal Loans -->
+    <article class="max-w-4xl mx-auto px-4 py-12 prose prose-lg prose-blue dark:prose-invert">
+        <h2>Understanding Personal Loan EMIs (2026)</h2>
+        <p>A personal loan is an unsecured loan, meaning you do not need to provide collateral (like a house or car) to the bank. Because the risk to the bank is higher, personal loans command higher interest rates, typically ranging from 10.50% to 24.00% depending on your CIBIL score.</p>
+        
+        <h3>The Impact of Processing Fees</h3>
+        <p>When calculating your personal loan, remember that banks charge a processing fee (usually 1% to 2.5% of the loan amount). This fee is usually deducted directly from your disbursed amount. So if you need exactly ₹3 Lakhs for a medical emergency, you should apply for ₹3.05 Lakhs to cover the fee.</p>
+
+        <h3>Pre-Closure Charges</h3>
+        <p>Unlike Home Loans (which have zero pre-closure charges per RBI rules), personal loans usually carry a hefty pre-closure or foreclosure penalty of 2% to 4%. Furthermore, most banks have a "lock-in" period of 6 to 12 months before they allow you to pay off the loan entirely. If you plan to pay off the loan early, factor this penalty into your financial calculations.</p>
+        
+        <h3>Why Tenure Matters</h3>
+        <p>While stretching a personal loan to 5 years lowers your monthly EMI, it drastically increases the total interest you pay to the bank. It is highly recommended to keep personal loan tenures as short as possible (1 to 3 years) to avoid a debt trap.</p>
+    </article>
+
+    <footer class="bg-white dark:bg-darkcard border-t border-gray-200 dark:border-gray-800 pt-8 pb-8 mt-12 text-center text-sm text-gray-500">
+        &copy; 2026 EMI Calculator Pro India. All rights reserved.
+    </footer>
+
+    <!-- Script Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { if (typeof lucide !== 'undefined') lucide.createIcons(); });
+
+        const pInput = document.getElementById('principalInput'), pSlider = document.getElementById('principalSlider');
+        const rInput = document.getElementById('rateInput'), rSlider = document.getElementById('rateSlider');
+        const tInput = document.getElementById('tenureInput'), tSlider = document.getElementById('tenureSlider');
+        const tType = document.getElementById('tenureType');
+        let emiChartInstance = null;
+        const formatINR = (num) => new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(num);
+
+        function syncSliderToInput(type) { if (type === 'principal') pInput.value = pSlider.value; if (type === 'rate') rInput.value = rSlider.value; if (type === 'tenure') tInput.value = tSlider.value; calculateEMI(); }
+        function syncInputToSlider(type) { if (type === 'principal') pSlider.value = pInput.value; if (type === 'rate') rSlider.value = rInput.value; if (type === 'tenure') tSlider.value = tInput.value; calculateEMI(); }
+
+        function calculateEMI() {
+            let P = parseFloat(pInput.value), R = parseFloat(rInput.value), T = parseFloat(tInput.value);
+            if(isNaN(P) || isNaN(R) || isNaN(T) || P<=0 || R<=0 || T<=0) return;
+            
+            let months = tType.value === "years" ? T * 12 : T;
+            
+            // Adjust slider max boundaries dynamically for Months vs Years
+            if(tType.value === "months") {
+                tSlider.max = 60; // 5 years in months
+                document.getElementById('tenureMinLabel').innerText = "1 Mo"; 
+                document.getElementById('tenureMaxLabel').innerText = "60 Mo";
+            } else {
+                tSlider.max = 5;
+                document.getElementById('tenureMinLabel').innerText = "1 Yr"; 
+                document.getElementById('tenureMaxLabel').innerText = "5 Yrs";
+            }
+
+            let r = R / 12 / 100;
+            let emi = P * r * Math.pow(1 + r, months) / (Math.pow(1 + r, months) - 1);
+            let totalAmount = emi * months; 
+            let totalInterest = totalAmount - P;
+            
+            document.getElementById('resEmi').innerText = formatINR(emi); 
+            document.getElementById('resPrincipal').innerText = formatINR(P); 
+            document.getElementById('resInterest').innerText = formatINR(totalInterest);
+            if(typeof Chart !== 'undefined') updateChart(P, totalInterest);
+        }
+
+        function updateChart(p, i) {
+            const ctx = document.getElementById('emiChart').getContext('2d');
+            if (emiChartInstance) emiChartInstance.destroy();
+            emiChartInstance = new Chart(ctx, { type: 'doughnut', data: { labels:['Principal', 'Interest'], datasets: [{ data:[p, i], backgroundColor:['#059669', '#38bdf8'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom', labels: { color: '#e2e8f0' } } } } });
+        }
+
+        // Initialize Personal Loan Defaults on Page Load (3 Lakhs, 11.5%, 3 Years)
+        window.onload = () => { 
+            pInput.value = 300000; pSlider.value = 300000;
+            rInput.value = 11.5; rSlider.value = 11.5;
+            tInput.value = 3; tSlider.value = 3;
+            pSlider.max = 5000000; tSlider.max = 5; rSlider.max = 30;
+            calculateEMI(); 
+        };
+    </script>
+</body>
+</html>

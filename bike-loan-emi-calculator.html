@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Loan EMI Calculator India (2026) - Two-Wheeler Finance</title>
+    <meta name="description" content="Calculate your Two-Wheeler / Bike Loan EMI instantly. Estimate your monthly auto finance payments based on on-road prices and check current bank interest rates.">
+    <meta name="keywords" content="bike loan emi calculator, two wheeler loan calculator, bike finance calculator, scooter loan emi, bullet loan calculator">
+    
+    <!-- Canonical Tag for SEO -->
+    <link rel="canonical" href="https://www.your-emi-domain.in/bike-loan-emi-calculator.html" />
+    
+    <!-- Open Graph / Social SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.your-emi-domain.in/bike-loan-emi-calculator.html">
+    <meta property="og:title" content="Bike Loan EMI Calculator India (2026)">
+    <meta property="og:description" content="Calculate your exact monthly bike loan payments based on on-road prices.">
+
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0369a1', secondary: '#059669', darkbg: '#0f172a', darkcard: '#1e293b' } } } }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f1f1f1; } .dark ::-webkit-scrollbar-track { background: #1e293b; } ::-webkit-scrollbar-thumb { background: #0369a1; border-radius: 4px; }
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #059669; cursor: pointer; margin-top: -8px; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #e2e8f0; border-radius: 3px; } .dark input[type=range]::-webkit-slider-runnable-track { background: #334155; }
+        .hide-arrows::-webkit-outer-spin-button, .hide-arrows::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; } .hide-arrows { -moz-appearance: textfield; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-darkbg dark:text-gray-100 transition-colors duration-200 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-darkcard shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="bg-primary p-2 rounded-lg"><i data-lucide="landmark" class="text-white h-6 w-6"></i></div>
+                    <span class="font-bold text-xl tracking-tight">EMI Calc <span class="text-secondary">Pro</span></span>
+                </a>
+                <div class="hidden md:flex space-x-5 font-medium text-sm">
+                    <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition">Main</a>
+                    <a href="home-loan-emi-calculator.html" class="hover:text-primary dark:hover:text-secondary transition">Home</a>
+                    <a href="car-loan-emi-calculator.html" class="hover:text-primary dark:hover:text-secondary transition">Car</a>
+                    <a href="bike-loan-emi-calculator.html" class="text-primary dark:text-secondary border-b-2 border-primary dark:border-secondary pb-1">Bike Loan</a>
+                    <a href="personal-loan-emi-calculator.html" class="hover:text-primary dark:hover:text-secondary transition">Personal</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Tool Section -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">Bike / Two-Wheeler Loan EMI Calculator</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Instantly plan your motorcycle or scooter financing with accurate EMI schedules.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left: Inputs -->
+            <div class="lg:col-span-7 bg-white dark:bg-darkcard rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 dark:border-gray-800">
+                <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-lg mb-8">
+                    <button id="btn-bike" class="loan-type-btn flex-1 py-2 px-2 text-sm md:text-base rounded-md bg-white dark:bg-darkcard shadow text-primary dark:text-white font-bold transition-all">Two-Wheeler Loan</button>
+                </div>
+                
+                <!-- Principal -->
+                <div class="mb-8 relative">
+                    <div class="flex justify-between items-end mb-4">
+                        <label class="text-sm font-semibold">Bike Loan Amount (₹)</label>
+                        <div class="relative w-1/3 min-w-[120px]">
+                            <span class="absolute inset-y-0 left-3 flex items-center text-gray-500 font-bold">₹</span>
+                            <input type="number" id="principalInput" class="hide-arrows w-full pl-8 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 rounded-lg font-bold outline-none" oninput="syncInputToSlider('principal')">
+                        </div>
+                    </div>
+                    <!-- Max 5 Lakhs for standard UX -->
+                    <input type="range" id="principalSlider" min="10000" max="500000" step="5000" oninput="syncSliderToInput('principal')">
+                </div>
+
+                <!-- Rate -->
+                <div class="mb-8 relative">
+                    <div class="flex justify-between items-end mb-4">
+                        <label class="text-sm font-semibold">Interest Rate (p.a)</label>
+                        <div class="relative w-1/3 min-w-[120px]">
+                            <input type="number" id="rateInput" class="hide-arrows w-full pl-3 pr-8 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 rounded-lg font-bold outline-none" step="0.1" oninput="syncInputToSlider('rate')">
+                            <span class="absolute inset-y-0 right-4 flex items-center text-gray-500 font-bold">%</span>
+                        </div>
+                    </div>
+                    <input type="range" id="rateSlider" min="5" max="25" step="0.1" oninput="syncSliderToInput('rate')">
+                </div>
+
+                <!-- Tenure -->
+                <div class="mb-4 relative">
+                    <div class="flex justify-between items-end mb-4">
+                        <label class="text-sm font-semibold">Loan Tenure</label>
+                        <div class="flex gap-2 w-1/3 min-w-[140px]">
+                            <input type="number" id="tenureInput" class="hide-arrows w-2/3 pl-3 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 rounded-lg font-bold outline-none" oninput="syncInputToSlider('tenure')">
+                            <select id="tenureType" class="w-1/3 bg-gray-50 dark:bg-gray-900 border border-gray-200 rounded-lg text-sm outline-none p-1" onchange="calculateEMI()">
+                                <option value="years">Yr</option><option value="months">Mo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Max 5 Years for Two-Wheelers -->
+                    <input type="range" id="tenureSlider" min="1" max="5" step="1" oninput="syncSliderToInput('tenure')">
+                    <div class="flex justify-between text-xs text-gray-400 mt-2 font-medium"><span id="tenureMinLabel">1 Yr</span><span id="tenureMaxLabel">5 Yrs</span></div>
+                </div>
+            </div>
+
+            <!-- Right: Results -->
+            <div class="lg:col-span-5">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-darkcard dark:to-gray-900 rounded-2xl shadow-xl p-8 text-white h-full flex flex-col relative overflow-hidden">
+                    <div class="text-center mb-6 z-10">
+                        <p class="text-slate-300 font-semibold mb-1 uppercase text-xs">Monthly EMI</p>
+                        <div class="text-4xl font-black text-secondary">₹<span id="resEmi">0</span></div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10 mb-8 space-y-4 z-10">
+                        <div class="flex justify-between text-sm"><span class="text-slate-300">Principal</span><span class="font-bold">₹<span id="resPrincipal">0</span></span></div>
+                        <div class="flex justify-between text-sm border-t border-white/10 pt-3"><span class="text-slate-300">Total Interest</span><span class="font-bold">₹<span id="resInterest">0</span></span></div>
+                    </div>
+                    <div class="relative flex-grow flex items-center justify-center min-h-[200px] z-10"><canvas id="emiChart"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Specific SEO Content for Bike Loans -->
+    <article class="max-w-4xl mx-auto px-4 py-12 prose prose-lg prose-blue dark:prose-invert">
+        <h2>Two-Wheeler Loan EMI Calculation Guide (2026)</h2>
+        <p>A two-wheeler loan allows you to purchase a motorcycle, scooter, or superbike by paying a small initial down payment and financing the remaining amount through manageable Equated Monthly Installments (EMIs).</p>
+        
+        <h3>Why are Bike Loan Interest Rates Higher?</h3>
+        <p>You may notice that two-wheeler loans often have higher interest rates (typically 10.5% to 18%) compared to car or home loans. This is because two-wheelers are subject to much faster depreciation and carry a higher risk profile for lenders. To get the best rate, maintain a CIBIL score above 750 and apply during festive periods when banks offer "Zero Processing Fee" schemes.</p>
+
+        <h3>Down Payment & LTV Ratio</h3>
+        <p>Most banks and NBFCs offer a Loan-to-Value (LTV) ratio of 85% to 95% on the <strong>On-Road Price</strong> of the bike. This means if you are buying a bike worth ₹1,000,000, you will need to pay roughly ₹10,000 to ₹15,000 upfront as a down payment.</p>
+        
+        <h3>The Hypothecation Process</h3>
+        <p>When you take a bike loan, your RC (Registration Certificate) book will have a 'Hypothecation' stamp indicating that the bank technically owns the vehicle. Once your final EMI is paid, you must obtain an NOC (No Objection Certificate) from your bank and submit it to your local RTO to remove the hypothecation and gain full legal ownership of your vehicle.</p>
+    </article>
+
+    <footer class="bg-white dark:bg-darkcard border-t border-gray-200 dark:border-gray-800 pt-8 pb-8 mt-12 text-center text-sm text-gray-500">
+        &copy; 2026 EMI Calculator Pro India. All rights reserved.
+    </footer>
+
+    <!-- Script Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { if (typeof lucide !== 'undefined') lucide.createIcons(); });
+
+        const pInput = document.getElementById('principalInput'), pSlider = document.getElementById('principalSlider');
+        const rInput = document.getElementById('rateInput'), rSlider = document.getElementById('rateSlider');
+        const tInput = document.getElementById('tenureInput'), tSlider = document.getElementById('tenureSlider');
+        const tType = document.getElementById('tenureType');
+        let emiChartInstance = null;
+        const formatINR = (num) => new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(num);
+
+        function syncSliderToInput(type) { if (type === 'principal') pInput.value = pSlider.value; if (type === 'rate') rInput.value = rSlider.value; if (type === 'tenure') tInput.value = tSlider.value; calculateEMI(); }
+        function syncInputToSlider(type) { if (type === 'principal') pSlider.value = pInput.value; if (type === 'rate') rSlider.value = rInput.va

@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Point directly to your sitemap so Google crawls it instantly
-Sitemap: https://www.your-emi-domain.in/sitemap.xml
+# Point directly to the sitemap so Google crawls it instantly
+Sitemap: https://dailytoolhub.github.io/emi-calculator/sitemap.xml

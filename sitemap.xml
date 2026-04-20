@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://dailytoolhub.github.io/emi-calculator/">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    
-   <!-- Homepage: Main EMI Calc -->
+   <!-- Main Calculator / Homepage -->
    <url>
-      <loc>https://www.your-emi-domain.in/</loc>
+      <loc>https://dailytoolhub.github.io/emi-calculator/</loc>
       <lastmod>2026-04-20</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
 
-   <!-- Future dedicated pages you can easily duplicate -->
-   <!-- 
+   <!-- SEO Silo Tools -->
    <url>
-      <loc>https://www.your-emi-domain.in/home-loan-emi-calculator.html</loc>
+      <loc>https://dailytoolhub.github.io/emi-calculator/home-loan-emi-calculator.html</loc>
       <lastmod>2026-04-20</lastmod>
+      <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
    <url>
-      <loc>https://www.your-emi-domain.in/car-loan-emi-calculator.html</loc>
+      <loc>https://dailytoolhub.github.io/emi-calculator/car-loan-emi-calculator.html</loc>
       <lastmod>2026-04-20</lastmod>
+      <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
-   -->
+   <url>
+      <loc>https://dailytoolhub.github.io/emi-calculator/bike-loan-emi-calculator.html</loc>
+      <lastmod>2026-04-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://dailytoolhub.github.io/emi-calculator/personal-loan-emi-calculator.html</loc>
+      <lastmod>2026-04-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
 
-   <!-- Legal Pages (Required for AdSense) -->
+   <!-- Legal Pages (Required for Google AdSense) -->
    <url>
-      <loc>https://www.your-emi-domain.in/privacy-policy.html</loc>
+      <loc>https://dailytoolhub.github.io/emi-calculator/privacy-policy.html</loc>
       <lastmod>2026-04-20</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
    <url>
-      <loc>https://www.your-emi-domain.in/terms-conditions.html</loc>
-      <lastmod>2026-04-20</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>0.3</priority>
-   </url>
-</urlset>
+      <loc>https://dailytoolhub.git
