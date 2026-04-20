@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - EMI Calculator Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <span class="font-bold text-xl tracking-tight text-blue-800">EMI Calc <span class="text-green-600">Pro</span></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 prose prose-lg prose-blue">
+        <h1>Financial Disclaimer</h1>
+        
+        <p><strong>General Information Purposes Only</strong><br>
+        The information and calculators provided on EMI Calculator Pro are intended solely for general informational and educational purposes. They are provided "as is" without any representations or warranties, express or implied.</p>
+
+        <p><strong>Not Professional Advice</strong><br>
+        The calculations performed by our website are based on standard mathematical formulas. However, banking institutions may use varying methodologies, apply compounding differently, or include processing fees and taxes that are not accounted for in this tool. The results shown do not constitute financial, legal, or tax advice.</p>
+
+        <p><strong>Accuracy of Data</strong><br>
+        While we strive to keep the information up to date and correct, we make no representations or warranties of any kind about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website.</p>
+
+        <p><strong>External Links</strong><br>
+        Through this website, you may be able to link to other websites (such as via Advertisements) which are not under the control of EMI Calculator Pro. We have no control over the nature, content, and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
+    </main>
+
+</body>
+</html>

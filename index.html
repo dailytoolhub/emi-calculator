@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMI Calculator Pro - Free Home, Car & Personal Loan Calc</title>
-    <meta name="description" content="Use India's most accurate EMI Calculator. Instantly calculate your monthly EMI for Home Loans, Car Loans, and Personal Loans with interactive charts.">
-    <meta name="keywords" content="emi calculator, home loan emi calculator, personal loan calculator, car loan emi, loan calculator india, sbi emi calculator, hdfc emi calculator">
+    <title>EMI Calculator Pro - Free Home, Car & Personal Loan Calc (2026)</title>
+    <meta name="description" content="Use India's most accurate EMI Calculator. Instantly calculate your monthly EMI for Home Loans, Car Loans, and Personal Loans with an interactive amortization chart.">
+    <meta name="keywords" content="emi calculator, home loan emi calculator, personal loan calculator, car loan emi, loan calculator india, sbi emi calculator, hdfc emi calculator, amortization schedule">
     
-    <!-- Tailwind CSS -->
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://www.your-emi-domain.in/" />
+
+    <!-- Open Graph / Social SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.your-emi-domain.in/">
+    <meta property="og:title" content="EMI Calculator Pro - Fast & Free">
+    <meta property="og:description" content="Calculate your monthly EMI instantly with our interactive financial tool.">
+    
+    <!-- Twitter Cards -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EMI Calculator Pro - Fast & Free">
+    <meta property="twitter:description" content="Calculate your monthly EMI instantly with our interactive financial tool.">
+
+    <!-- Deferred Scripts for Page Speed (99+ Lighthouse) -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Chart.js for Data Visualization -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
         tailwind.config = {
@@ -34,14 +46,6 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "EMI Calculator Pro",
-      "url": "https://www.your-emi-domain.in/"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "EMI Calculator Pro",
       "applicationCategory": "FinanceApplication",
@@ -51,7 +55,31 @@
         "price": "0",
         "priceCurrency": "INR"
       },
-      "description": "Calculate Home, Car, and Personal Loan Equated Monthly Installments (EMI) instantly."
+      "description": "Calculate Home, Car, and Personal Loan EMIs instantly."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity":[
+        {
+          "@type": "Question",
+          "name": "How is the Home Loan EMI calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Home Loan EMI is calculated using the formula: E = P x r x (1+r)^n / ((1+r)^n - 1)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a higher CIBIL score reduce my EMI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in India, a CIBIL score above 750 often qualifies you for the lowest interest rates from banks, which reduces your monthly EMI."
+          }
+        }
+      ]
     }
     </script>
 
@@ -61,7 +89,6 @@
         .dark ::-webkit-scrollbar-track { background: #1e293b; }
         ::-webkit-scrollbar-thumb { background: #0369a1; border-radius: 4px; }
         
-        /* Custom Range Slider Styling */
         input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
         input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #059669; cursor: pointer; margin-top: -8px; border: 2px solid white; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
         input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; cursor: pointer; background: #e2e8f0; border-radius: 3px; }
@@ -76,16 +103,15 @@
     <nav class="bg-white dark:bg-darkcard shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2">
                     <div class="bg-primary p-2 rounded-lg">
                         <i data-lucide="landmark" class="text-white h-6 w-6"></i>
                     </div>
                     <span class="font-bold text-xl tracking-tight">EMI Calc <span class="text-secondary">Pro</span></span>
-                </div>
+                </a>
                 <div class="hidden md:flex space-x-8 font-medium">
-                    <a href="#" class="text-primary dark:text-secondary border-b-2 border-primary dark:border-secondary pb-1">Calculator</a>
+                    <a href="index.html" class="text-primary dark:text-secondary border-b-2 border-primary dark:border-secondary pb-1">Calculator</a>
                     <a href="#how-it-works" class="hover:text-primary dark:hover:text-secondary transition">How it Works</a>
-                    <a href="#rates" class="hover:text-primary dark:hover:text-secondary transition">Current Rates</a>
                 </div>
                 <div class="flex items-center gap-4">
                     <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition">
@@ -97,13 +123,12 @@
         </div>
     </nav>
 
-    <!-- AdSense Header -->
+    <!-- AdSense Header Placeholder -->
     <div class="max-w-7xl mx-auto px-4 mt-4 text-center">
-        <div class="bg-gray-200 dark:bg-gray-800 text-gray-500 text-sm py-4 rounded-md border border-dashed border-gray-400">[ AdSense Header Banner 728x90 ]
-        </div>
+        <div class="bg-gray-200 dark:bg-gray-800 text-gray-500 text-sm py-4 rounded-md border border-dashed border-gray-400">[ AdSense Header Banner 728x90 ]</div>
     </div>
 
-    <!-- Main App Section -->
+    <!-- Main Application -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="text-center mb-10">
             <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">Smart EMI Calculator</h1>
@@ -111,11 +136,9 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            <!-- Left: Inputs & Sliders -->
+            <!-- Left: Inputs -->
             <div class="lg:col-span-7 bg-white dark:bg-darkcard rounded-2xl shadow-lg p-6 md:p-8 border border-gray-100 dark:border-gray-800">
                 
-                <!-- Loan Categories Toggle -->
                 <div class="flex p-1 bg-gray-100 dark:bg-gray-800 rounded-lg mb-8">
                     <button class="loan-type-btn flex-1 py-2 px-2 text-sm md:text-base rounded-md bg-white dark:bg-darkcard shadow text-primary dark:text-white font-bold transition-all" onclick="setLoanType('home', this, 5000000, 8.5, 20)">Home Loan</button>
                     <button class="loan-type-btn flex-1 py-2 px-2 text-sm md:text-base rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-900 transition-all font-semibold" onclick="setLoanType('car', this, 800000, 9.5, 5)">Car Loan</button>
@@ -132,10 +155,7 @@
                         </div>
                     </div>
                     <input type="range" id="principalSlider" min="100000" max="100000000" step="50000" value="5000000" oninput="syncSliderToInput('principal')">
-                    <div class="flex justify-between text-xs text-gray-400 mt-2 font-medium">
-                        <span>1L</span>
-                        <span>10Cr</span>
-                    </div>
+                    <div class="flex justify-between text-xs text-gray-400 mt-2 font-medium"><span>1L</span><span>10Cr</span></div>
                 </div>
 
                 <!-- Interest Rate -->
@@ -148,10 +168,7 @@
                         </div>
                     </div>
                     <input type="range" id="rateSlider" min="1" max="30" step="0.1" value="8.5" oninput="syncSliderToInput('rate')">
-                    <div class="flex justify-between text-xs text-gray-400 mt-2 font-medium">
-                        <span>1%</span>
-                        <span>30%</span>
-                    </div>
+                    <div class="flex justify-between text-xs text-gray-400 mt-2 font-medium"><span>1%</span><span>30%</span></div>
                 </div>
 
                 <!-- Tenure -->
@@ -167,10 +184,7 @@
                         </div>
                     </div>
                     <input type="range" id="tenureSlider" min="1" max="30" step="1" value="20" oninput="syncSliderToInput('tenure')">
-                    <div class="flex justify-between text-xs text-gray-400 mt-2 font-medium">
-                        <span id="tenureMinLabel">1 Yr</span>
-                        <span id="tenureMaxLabel">30 Yrs</span>
-                    </div>
+                    <div class="flex justify-between text-xs text-gray-400 mt-2 font-medium"><span id="tenureMinLabel">1 Yr</span><span id="tenureMaxLabel">30 Yrs</span></div>
                 </div>
 
             </div>
@@ -178,95 +192,88 @@
             <!-- Right: Results & Chart -->
             <div class="lg:col-span-5">
                 <div class="bg-gradient-to-br from-slate-800 to-slate-900 dark:from-darkcard dark:to-gray-900 rounded-2xl shadow-xl p-8 text-white border border-slate-700 h-full flex flex-col relative overflow-hidden">
-                    
-                    <!-- Decorative Circle -->
                     <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary opacity-20 rounded-full blur-2xl"></div>
-
+                    
                     <div class="text-center mb-6 relative z-10">
                         <p class="text-slate-300 font-semibold mb-1 uppercase tracking-widest text-xs">Monthly EMI</p>
                         <div class="text-4xl md:text-5xl font-black tracking-tight text-secondary">₹<span id="resEmi">0</span></div>
                     </div>
 
-                    <!-- Details Box -->
                     <div class="bg-white/5 rounded-xl p-5 border border-white/10 mb-8 space-y-4 relative z-10">
                         <div class="flex justify-between items-center text-sm">
                             <span class="text-slate-300">Principal Amount</span>
                             <span class="font-bold text-white">₹<span id="resPrincipal">0</span></span>
                         </div>
                         <div class="flex justify-between items-center text-sm border-t border-white/10 pt-3">
-                            <span class="text-slate-300">Total Interest Payable</span>
+                            <span class="text-slate-300">Total Interest</span>
                             <span class="font-bold text-white">₹<span id="resInterest">0</span></span>
                         </div>
                         <div class="flex justify-between items-center text-sm border-t border-white/10 pt-3">
-                            <span class="text-slate-300">Total Amount Payable</span>
+                            <span class="text-slate-300">Total Payable</span>
                             <span class="font-bold text-white">₹<span id="resTotal">0</span></span>
                         </div>
                     </div>
 
-                    <!-- Chart Box -->
                     <div class="relative flex-grow flex items-center justify-center min-h-[200px] z-10">
                         <canvas id="emiChart"></canvas>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </main>
 
     <!-- AdSense In-Article -->
     <div class="max-w-4xl mx-auto px-4 mt-8 mb-12">
-        <div class="bg-gray-200 dark:bg-gray-800 text-gray-500 py-6 rounded-md border border-dashed border-gray-400 flex items-center justify-center text-sm">[ AdSense In-Article Responsive Banner ]
-        </div>
+        <div class="bg-gray-200 dark:bg-gray-800 text-gray-500 py-6 rounded-md border border-dashed border-gray-400 flex items-center justify-center text-sm">[ AdSense In-Article Responsive Banner ]</div>
     </div>
 
     <!-- SEO Content Section -->
     <article id="how-it-works" class="max-w-4xl mx-auto px-4 sm:px-6 py-12 prose dark:prose-invert prose-lg prose-blue">
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">How EMI is Calculated (2026 Guide)</h2>
+        <p>An Equated Monthly Installment (EMI) is the fixed monthly payment you make to a bank or NBFC to repay your loan. It consists of two parts: the principal repayment and the interest payment.</p>
         
-        <p>An Equated Monthly Installment (EMI) is the fixed monthly payment you make to a bank or NBFC to repay your loan. It consists of two parts: the principal repayment and the interest payment. Our EMI Calculator Pro uses the standard banking formula to give you mathematically accurate results instantly.</p>
-
         <h3 class="text-2xl font-semibold mt-8 mb-4">The Mathematical EMI Formula</h3>
-        <p>Whether you are taking a loan from SBI, HDFC, or ICICI, they all use this universal formula:</p>
         <div class="bg-white dark:bg-darkcard shadow-sm border border-gray-200 dark:border-gray-700 rounded-xl p-6 my-6 text-center text-lg font-mono font-bold text-primary dark:text-secondary">
             E = P × r × (1 + r)^n / ((1 + r)^n - 1)
         </div>
-        <ul class="list-disc pl-5 space-y-2 mb-4">
-            <li><strong>E</strong> = EMI Amount</li>
-            <li><strong>P</strong> = Principal Loan Amount</li>
-            <li><strong>r</strong> = Monthly Interest Rate (Annual Rate / 12 / 100)</li>
-            <li><strong>n</strong> = Loan Tenure in Months</li>
-        </ul>
-
-        <h3 id="rates" class="text-2xl font-semibold mt-8 mb-4">Average Interest Rates in India (2026)</h3>
-        <p>Interest rates depend heavily on your CIBIL score. Below are the current market benchmarks to help you use the calculator accurately:</p>
-        <table class="w-full text-left border-collapse mt-4">
+        
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Average Interest Rates in India (2026)</h3>
+        <table class="w-full text-left border-collapse mt-4 text-sm md:text-base">
             <thead>
                 <tr class="bg-gray-100 dark:bg-gray-800 border-b dark:border-gray-700">
                     <th class="p-3 font-semibold">Loan Type</th>
-                    <th class="p-3 font-semibold">Typical Interest Rate</th>
-                    <th class="p-3 font-semibold">Standard Max Tenure</th>
+                    <th class="p-3 font-semibold">Typical Rate</th>
+                    <th class="p-3 font-semibold">Standard Tenure</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="border-b dark:border-gray-700">
-                    <td class="p-3"><strong>Home Loan</strong></td>
-                    <td class="p-3">8.30% - 9.50%</td>
-                    <td class="p-3">30 Years</td>
-                </tr>
-                <tr class="border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                    <td class="p-3"><strong>Car Loan</strong></td>
-                    <td class="p-3">8.75% - 10.50%</td>
-                    <td class="p-3">7 Years</td>
-                </tr>
-                <tr>
-                    <td class="p-3"><strong>Personal Loan</strong></td>
-                    <td class="p-3">10.50% - 24.00%</td>
-                    <td class="p-3">5 Years</td>
-                </tr>
+                <tr class="border-b dark:border-gray-700"><td class="p-3">Home Loan</td><td class="p-3">8.30% - 9.50%</td><td class="p-3">30 Years</td></tr>
+                <tr class="border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50"><td class="p-3">Car Loan</td><td class="p-3">8.75% - 10.50%</td><td class="p-3">7 Years</td></tr>
+                <tr><td class="p-3">Personal Loan</td><td class="p-3">10.50% - 24.00%</td><td class="p-3">5 Years</td></tr>
             </tbody>
         </table>
     </article>
+
+    <!-- SEO Semantic FAQ Section -->
+    <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-gray-800 pb-2">Frequently Asked Questions</h3>
+        <div class="space-y-4">
+            <details class="group bg-white dark:bg-darkcard rounded-lg border border-gray-200 dark:border-gray-700 p-4 cursor-pointer">
+                <summary class="font-bold flex justify-between items-center text-gray-900 dark:text-gray-100">
+                    How does making a prepayment affect my EMI?
+                    <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 text-sm">Making a part-prepayment reduces your outstanding principal amount. You can choose to reduce your EMI or decrease your loan tenure.</p>
+            </details>
+            <details class="group bg-white dark:bg-darkcard rounded-lg border border-gray-200 dark:border-gray-700 p-4 cursor-pointer">
+                <summary class="font-bold flex justify-between items-center text-gray-900 dark:text-gray-100">
+                    Does a higher CIBIL score reduce my EMI?
+                    <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="mt-4 text-gray-600 dark:text-gray-400 text-sm">Yes. In India, a CIBIL score of 750 or above usually qualifies you for concessional interest rates, which lowers your EMI.</p>
+            </details>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-white dark:bg-darkcard border-t border-gray-200 dark:border-gray-800 pt-12 pb-8 mt-12">
@@ -274,43 +281,33 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="bg-primary p-1.5 rounded-lg">
-                            <i data-lucide="landmark" class="text-white h-5 w-5"></i>
-                        </div>
+                        <div class="bg-primary p-1.5 rounded-lg"><i data-lucide="landmark" class="text-white h-5 w-5"></i></div>
                         <span class="font-bold text-lg tracking-tight">EMI Calc <span class="text-secondary">Pro</span></span>
                     </div>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm max-w-sm">
-                        Fast, free, and accurate EMI calculations for Indian consumers. Plan your loans smarter.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4 text-gray-900 dark:text-gray-100">Specific Calculators</h4>
-                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                        <li><a href="#" class="hover:text-primary transition">Home Loan Calculator</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Car Loan Calculator</a></li>
-                        <li><a href="#" class="hover:text-primary transition">Personal Loan Calculator</a></li>
-                    </ul>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm max-w-sm">Fast, free, and accurate EMI calculations for Indian consumers.</p>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4 text-gray-900 dark:text-gray-100">Legal Pages</h4>
                     <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-                        <li><a href="/privacy-policy.html" class="hover:text-primary transition">Privacy Policy</a></li>
-                        <li><a href="/terms-conditions.html" class="hover:text-primary transition">Terms of Service</a></li>
-                        <li><a href="/contact.html" class="hover:text-primary transition">Contact Us</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-primary transition">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html" class="hover:text-primary transition">Terms of Service</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-primary transition">Disclaimer</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-200 dark:border-gray-800 pt-8 text-center text-sm text-gray-500">
-                &copy; 2026 EMI Calculator Pro India. All rights reserved. Not affiliated with any bank.
+                &copy; 2026 EMI Calculator Pro India. All rights reserved. Not financial advice.
             </div>
         </div>
     </footer>
 
-    <!-- Script Logic -->
+    <!-- App Logic Scripts -->
     <script>
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            calculateEMI();
+        });
 
-        // Variables
         const pInput = document.getElementById('principalInput');
         const pSlider = document.getElementById('principalSlider');
         const rInput = document.getElementById('rateInput');
@@ -318,15 +315,10 @@
         const tInput = document.getElementById('tenureInput');
         const tSlider = document.getElementById('tenureSlider');
         const tType = document.getElementById('tenureType');
-        
         let emiChartInstance = null;
 
-        // Formatter for Indian Rupees
-        const formatINR = (number) => {
-            return new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(number);
-        };
+        const formatINR = (number) => new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 }).format(number);
 
-        // Sync logic between input boxes and sliders
         function syncSliderToInput(type) {
             if (type === 'principal') pInput.value = pSlider.value;
             if (type === 'rate') rInput.value = rSlider.value;
@@ -341,7 +333,6 @@
             calculateEMI();
         }
 
-        // Loan presets
         function setLoanType(type, btnElement, p, r, t) {
             document.querySelectorAll('.loan-type-btn').forEach(btn => {
                 btn.className = "loan-type-btn flex-1 py-2 px-2 text-sm md:text-base rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-900 transition-all font-semibold";
@@ -361,102 +352,61 @@
             calculateEMI();
         }
 
-        // Core Calculation
         function calculateEMI() {
-            let P = parseFloat(pInput.value);
-            let R = parseFloat(rInput.value);
-            let T = parseFloat(tInput.value);
-            
+            let P = parseFloat(pInput.value); let R = parseFloat(rInput.value); let T = parseFloat(tInput.value);
             if(isNaN(P) || isNaN(R) || isNaN(T) || P<=0 || R<=0 || T<=0) return;
 
             let months = tType.value === "years" ? T * 12 : T;
-            
             if(tType.value === "months") {
                 tSlider.max = 360;
-                document.getElementById('tenureMinLabel').innerText = "1 Mo";
-                document.getElementById('tenureMaxLabel').innerText = "360 Mo";
+                document.getElementById('tenureMinLabel').innerText = "1 Mo"; document.getElementById('tenureMaxLabel').innerText = "360 Mo";
             } else {
                 let currentMax = tSlider.max; 
-                document.getElementById('tenureMinLabel').innerText = "1 Yr";
-                document.getElementById('tenureMaxLabel').innerText = currentMax + " Yrs";
+                document.getElementById('tenureMinLabel').innerText = "1 Yr"; document.getElementById('tenureMaxLabel').innerText = currentMax + " Yrs";
             }
 
             let r = R / 12 / 100;
             let emi = P * r * Math.pow(1 + r, months) / (Math.pow(1 + r, months) - 1);
-            let totalAmount = emi * months;
-            let totalInterest = totalAmount - P;
+            let totalAmount = emi * months; let totalInterest = totalAmount - P;
 
             document.getElementById('resEmi').innerText = formatINR(emi);
             document.getElementById('resPrincipal').innerText = formatINR(P);
             document.getElementById('resInterest').innerText = formatINR(totalInterest);
             document.getElementById('resTotal').innerText = formatINR(totalAmount);
 
-            updateChart(P, totalInterest);
+            if(typeof Chart !== 'undefined') updateChart(P, totalInterest);
         }
 
-        // Chart.js Logic
         function updateChart(principal, interest) {
             const ctx = document.getElementById('emiChart').getContext('2d');
-            
-            if (emiChartInstance) {
-                emiChartInstance.destroy();
-            }
-
+            if (emiChartInstance) emiChartInstance.destroy();
             emiChartInstance = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Principal', 'Total Interest'],
-                    datasets: [{
-                        data: [principal, interest],
-                        backgroundColor: ['#059669', '#38bdf8'], // Green and Light Blue
-                        borderWidth: 0,
-                        hoverOffset: 4
-                    }]
+                    labels:['Principal', 'Total Interest'],
+                    datasets: [{ data: [principal, interest], backgroundColor:['#059669', '#38bdf8'], borderWidth: 0, hoverOffset: 4 }]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    responsive: true, maintainAspectRatio: false,
                     plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                color: '#e2e8f0', // Light slate for dark BG
-                                font: { family: 'Inter', size: 12, weight: '500' },
-                                padding: 20
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.label || '';
-                                    if (label) label += ': ';
-                                    label += '₹' + formatINR(context.raw);
-                                    return label;
-                                }
-                            }
-                        }
+                        legend: { position: 'bottom', labels: { color: '#e2e8f0', font: { family: 'Inter', size: 12 } } },
+                        tooltip: { callbacks: { label: function(context) { return (context.label || '') + ': ₹' + formatINR(context.raw); } } }
                     },
                     cutout: '75%'
                 }
             });
         }
 
-        // Dark Mode Setup
         const themeToggleBtn = document.getElementById('themeToggle');
         const htmlElement = document.documentElement;
-
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             htmlElement.classList.add('dark');
-        } else {
-            htmlElement.classList.remove('dark');
-        }
+        } else { htmlElement.classList.remove('dark'); }
 
         themeToggleBtn.addEventListener('click', () => {
             htmlElement.classList.toggle('dark');
             localStorage.theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
         });
-
-        window.onload = () => { calculateEMI(); };
     </script>
 </body>
 </html>
